@@ -38,7 +38,6 @@ public class LoginViewModel extends ViewModel {
         return userMutableLiveData;
     }
 
-
     public void onLoginClicked() {
         getBusy().setValue(0); //View.VISIBLE
         new Handler().postDelayed(new Runnable() {
