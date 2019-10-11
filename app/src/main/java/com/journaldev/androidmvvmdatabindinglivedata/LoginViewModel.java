@@ -9,31 +9,27 @@ import android.os.Handler;
 
 public class LoginViewModel extends ViewModel {
 
-
     public MutableLiveData<String> errorPassword = new MutableLiveData<>();
     public MutableLiveData<String> errorEmail = new MutableLiveData<>();
 
     public MutableLiveData<String> email = new MutableLiveData<>();
     public MutableLiveData<String> password = new MutableLiveData<>();
-    public MutableLiveData<Integer> busy;
 
-    public MutableLiveData<Integer> getBusy() {
-
-        if (busy == null) {
-            busy = new MutableLiveData<>();
-            busy.setValue(8);
-        }
-
-        return busy;
-    }
-
-
+    //== Constructor ==
     public LoginViewModel() {
 
     }
 
-    private MutableLiveData<User> userMutableLiveData;
+    private MutableLiveData<Integer> busy;
+    public MutableLiveData<Integer> getBusy() {
+        if (busy == null) {
+            busy = new MutableLiveData<>();
+            busy.setValue(8);
+        }
+        return busy;
+    }
 
+    private MutableLiveData<User> userMutableLiveData;
     LiveData<User> getUser() {
         if (userMutableLiveData == null) {
             userMutableLiveData = new MutableLiveData<>();
@@ -44,7 +40,6 @@ public class LoginViewModel extends ViewModel {
 
 
     public void onLoginClicked() {
-
         getBusy().setValue(0); //View.VISIBLE
         new Handler().postDelayed(new Runnable() {
             @Override
