@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         LoginViewModel loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
         binding.setLoginViewModel(loginViewModel);
         binding.setLifecycleOwner(this);
+        System.out.println();
 
 
         loginViewModel.getUser().observe(this, new Observer<User>() {
