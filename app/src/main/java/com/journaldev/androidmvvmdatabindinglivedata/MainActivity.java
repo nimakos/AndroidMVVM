@@ -30,6 +30,5 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "email : " + user.getEmail() + " password " + user.getPassword(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
