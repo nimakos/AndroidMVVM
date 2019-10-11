@@ -21,7 +21,6 @@ public class User {
         return mEmail;
     }
 
-
     public String getPassword() {
 
         if (mPassword == null) {
@@ -33,7 +32,6 @@ public class User {
     public boolean isEmailValid() {
         return Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches();
     }
-
 
     public boolean isPasswordLengthGreaterThan5() {
         return getPassword().length() > 5;
