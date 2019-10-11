@@ -16,13 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         LoginViewModel loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
         binding.setLoginViewModel(loginViewModel);
         binding.setLifecycleOwner(this);
-        System.out.println();
-
 
         loginViewModel.getUser().observe(this, new Observer<User>() {
             @Override
