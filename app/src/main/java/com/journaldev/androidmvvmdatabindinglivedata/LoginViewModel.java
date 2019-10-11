@@ -44,8 +44,6 @@ public class LoginViewModel extends ViewModel {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-
                 User user = new User(email.getValue(), password.getValue());
 
                 if (!user.isEmailValid()) {
